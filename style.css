@@ -47,3 +47,92 @@ footer {
   padding: 18px;
   margin-top: 40px;
 }
+/* Form Section */
+
+.form-section {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.form-section h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #2563eb;
+  border-color: #2563eb;
+}
+
+#add-movie-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#add-movie-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Error Messages */
+
+.error-message {
+  color: #cc0000;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.invalid {
+  border: 2px solid #cc0000;
+  background-color: #fff0f0;
+}
+
+/* Filter Section */
+
+.filter-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.filter-section div {
+  width: 60%;
+}
+
+#movie-count {
+  font-weight: bold;
+  margin: 0;
+}
