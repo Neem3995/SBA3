@@ -1,0 +1,49 @@
+/* Joseph Garcia */
+/* SBA 316 - The Document Object Model */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eeeeee;
+  color: #222222;
+}
+
+/* Header */
+
+header {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+header p {
+  margin: 0;
+}
+
+/* Main Content */
+
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+/* Footer */
+
+footer {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  margin-top: 40px;
+}
