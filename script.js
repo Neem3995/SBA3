@@ -124,3 +124,94 @@ function updateEmptyMessage() {
     currentEmptyMessage.remove();
   }
 }
+
+// -----------------------------
+// Part 7 - Validate Form Inputs
+// -----------------------------
+
+function validateMovieTitle() {
+  const titleValue = movieTitleInput.value.trim();
+
+  if (titleValue.length < 2) {
+    titleError.textContent =
+      "The movie title must contain at least 2 characters.";
+
+    movieTitleInput.classList.add("invalid");
+    movieTitleInput.setAttribute("aria-invalid", "true");
+
+    return false;
+  }
+
+  titleError.textContent = "";
+  movieTitleInput.classList.remove("invalid");
+  movieTitleInput.setAttribute("aria-invalid", "false");
+
+  return true;
+}
+
+function validateMovieRating() {
+  const ratingValue = Number(movieRatingInput.value);
+
+  if (
+    movieRatingInput.value === "" ||
+    ratingValue < 1 ||
+    ratingValue > 10
+  ) {
+    ratingError.textContent =
+      "The rating must be between 1 and 10.";
+
+    movieRatingInput.classList.add("invalid");
+    movieRatingInput.setAttribute("aria-invalid", "true");
+
+    return false;
+  }
+
+  ratingError.textContent = "";
+  movieRatingInput.classList.remove("invalid");
+  movieRatingInput.setAttribute("aria-invalid", "false");
+
+  return true;
+}
+
+// -----------------------------
+// Part 8 - Handle Form Submission
+// -----------------------------
+
+function handleMovieSubmit(event) {
+  event.preventDefault();
+
+  const titleIsValid = validateMovieTitle();
+  const ratingIsValid = validateMovieRating();
+
+  if (!titleIsValid || !ratingIsValid) {
+    window.alert("Please correct the form before adding the movie.");
+    return;
+  }
+
+  const newMovie = {
+    title: movieTitleInput.value.trim(),
+    genre: movieGenreInput.value,
+    rating: Number(movieRatingInput.value),
+    watched: false,
+  };
+
+  createMovieCard(newMovie);
+
+  movieForm.reset();
+
+  titleError.textContent = "";
+  ratingError.textContent = "";
+
+  movieTitleInput.classList.remove("invalid");
+  movieRatingInput.classList.remove("invalid");
+
+  movieTitleInput.focus();
+
+  window.alert(`${newMovie.title} was added to your watchlist!`);
+}
+movieForm.addEventListener("submit", handleMovieSubmit);
+
+movieTitleInput.addEventListener("blur", validateMovieTitle);
+
+movieRatingInput.addEventListener("blur", validateMovieRating);
+
