@@ -219,6 +219,10 @@ movieList.addEventListener("click", handleMovieClick);
 
 movieFilter.addEventListener("change", applyMovieFilter);
 
+movieList.addEventListener("click", handleMovieClick);
+
+movieFilter.addEventListener("change", applyMovieFilter);
+
 // -----------------------------
 // Part 9 - Handle Movie Buttons
 // -----------------------------
@@ -305,3 +309,9 @@ function applyMovieFilter() {
     }
   });
 }
+// -----------------------------
+// Part 11 - BOM Information
+// -----------------------------
+
+console.log(`Browser window width: ${window.innerWidth}px`);
+console.log(`Current page URL: ${window.location.href}`);
